@@ -17,7 +17,7 @@ A LangChain implementation of the Atom of Thought (AoT) prompting technique, a m
 pip install atom-of-thought
 
 # From source
-git clone https://github.com/yourusername/atom-of-thought.git
+git clone https://github.com/benman1/atom-of-thought.git
 cd atom-of-thought
 pip install -e .
 ```
@@ -26,7 +26,7 @@ pip install -e .
 
 ```python
 from langchain_openai import ChatOpenAI
-from atom_of_thought import AtomOfThought
+from atom_of_thought.aot import AtomOfThought
 import asyncio
 
 async def main():
@@ -74,9 +74,16 @@ This approach is particularly effective for:
 ### Multi-step Math Problem
 
 ```python
+from atom_of_thought.aot import AtomOfThought
+from langchain_openai import ChatOpenAI
+llm = ChatOpenAI(
+    model="gpt-4o",
+    temperature=0
+)
+aot = AtomOfThought(llm=llm)
 question = "Janet's ducks lay 16 eggs per day. She eats three for breakfast every morning and bakes muffins for her friends every day with four. She sells the remainder at the farmers' market daily for $2 per fresh duck egg. How much in dollars does she make every day at the farmers' market?"
 
-result = await aot.solve(question)
+result = aot.solve(question)
 print(result["answer"])  # Output: 18
 ```
 
@@ -85,7 +92,7 @@ print(result["answer"])  # Output: 18
 ```python
 question = "How can a short circuit be detected?\nA: a meggar\nB: an ammeter\nC: an ohmmeter\nD: an oscillscope"
 
-result = await aot.solve(question)
+result = aot.solve(question)
 print(result["answer"])  # Output: C
 ```
 
@@ -95,7 +102,7 @@ print(result["answer"])  # Output: C
 
 ```python
 system_prompt = "You are a math professor who gives step-by-step solutions."
-result = await aot.solve(question, system_prompt=system_prompt)
+result = aot.solve(question, system_prompt=system_prompt)
 ```
 
 ### Adjusting Recursion Depth
@@ -105,7 +112,7 @@ result = await aot.solve(question, system_prompt=system_prompt)
 aot = AtomOfThought(llm=llm, atom_depth=2)
 
 # Or specify depth per question
-result = await aot.solve(question, depth=1)
+result = aot.solve(question, depth=1)
 ```
 
 ## References

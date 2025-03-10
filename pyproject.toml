@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "A LangChain implementation of the Atom of Thought (AoT) prompting technique"
 readme = "README.md"
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "Ben Auffarth", email = "auffarth@gmail.com"}
 ]
 license = {text = "MIT"}
 classifiers = [
@@ -30,25 +30,19 @@ dependencies = [
     "langchain-core>=0.1.0",
     "langchain-openai>=0.0.5",
     "pydantic>=2.0.0",
-    "asyncio>=3.4.3",
+    "langchain_community",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
-    "pytest-asyncio>=0.18.0",
     "black>=22.0.0",
     "isort>=5.0.0",
     "flake8>=4.0.0",
 ]
-docs = [
-    "sphinx>=4.0.0",
-    "sphinx-rtd-theme>=1.0.0",
-]
 
 [project.urls]
-"Homepage" = "https://github.com/yourusername/atom-of-thought"
-"Bug Tracker" = "https://github.com/yourusername/atom-of-thought/issues"
+"Homepage" = "https://github.com/benman1/atom-of-thought"
 
 [tool.black]
 line-length = 88
