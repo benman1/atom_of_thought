@@ -117,14 +117,14 @@ result = aot.solve(question, depth=1)
 
 ## References
 
-This implementation is based on the original Atom of Thought paper. If you use this in your research, please cite:
+This implementation is based on the original [Atom of Thought paper](https://arxiv.org/abs/2502.12018). If you use this in your research, please cite:
 
 ```
-@article{atomofthought2023,
-  title={Atom of Thought: Enhancing LLM Reasoning via Atomized Thinking},
-  author={Original Authors},
-  journal={arXiv preprint},
-  year={2023}
+@article{teng2024atom,
+  title={Atom of Thoughts for Markov LLM Test-Time Scaling},
+  author={Teng, Fengwei and Yu, Zhaoyang and Shi, Quan and Zhang, Jiayi and Wu, Chenglin and Luo, Yuyu},
+  journal={arXiv preprint arXiv:2502.12018},
+  year={2025}
 }
 ```
 
